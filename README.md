@@ -19,6 +19,7 @@ WanAndroid开源框架地址请点击[GitHub](https://github.com/iceCola7/WanAnd
 
 ![](screenshot/首页.png)   ![](screenshot/2-1知识体系.png)
 ![](screenshot/3-1导航.png)   ![](screenshot/4-1项目.png) 
-
+![](screenshot/1-2文章详情.png)   ![](screenshot/1-3搜索.png) 
+![](screenshot/侧滑页.png)   ![](screenshot/夜间模式.png)
 
 
