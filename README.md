@@ -4,21 +4,20 @@
 
 WanAndroid开源框架地址请点击[GitHub](https://github.com/iceCola7/WanAndroid)
 
-[相关接口使用的Api](http://www.wanandroid.com/blog/show/2 "悬停显示")
+[相关接口使用的Api说明](http://www.wanandroid.com/blog/show/2)
 
 ### 模块介绍
 
-该项目总共分为以下四个模块：
+该项目大体分为以下四个模块：
 
-* 首页<br>
-
->>轮播图展示和文章列表
-
+* 首页：主要是轮播图展示和文章列表
 * 知识体系
+* 导航：知识点导航
+* 项目：项目列表展示
 
-* 导航
+###页面展示
 
-* 项目
+![](screenshot/首页.png)  
 
 
 
