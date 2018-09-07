@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SearchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_6"
+            android:paddingBottom="@dimen/dp_6"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_10"
+            android:background="@drawable/shape_round_small_grey"
+            android:textColor="@color/common_color"
+            android:textSize="@dimen/sp_14"
+            android:textColorHint="@color/Grey400"
+            android:hint="@string/info_search"
+            android:drawableStart="@drawable/ic_search_grey"
+            android:drawablePadding="@dimen/dp_5"
+            android:imeOptions="actionSearch"
+            android:inputType="text"/>
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/dp_6"
+            android:paddingEnd="@dimen/dp_16"
+            android:gravity="center"
+            android:text="@string/info_cancel"
+            android:textColor="@color/color_cancel_tv"
+            android:textSize="@dimen/sp_14"/>
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tvHotSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="@string/info_hot_search"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp_14"/>
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/tflHotSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:max_select="0"
+            app:layout_constraintTop_toBottomOf="@id/tvHotSearch"/>
+
+        <TextView
+            android:id="@+id/tvSearchHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:text="@string/info_search_history"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintTop_toBottomOf="@id/tflHotSearch"/>
+
+        <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info_clear"
+            android:textColor="@color/Grey400"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvSearchHistory"
+            app:layout_constraintBottom_toBottomOf="@id/tvSearchHistory"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSearchHistory"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

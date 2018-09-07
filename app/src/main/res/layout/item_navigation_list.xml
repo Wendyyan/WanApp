@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp_8"
+    android:paddingRight="@dimen/dp_8"
+    android:paddingTop="@dimen/dp_10">
+
+    <TextView
+        android:id="@+id/tv_navigation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_4"
+        android:drawableStart="@drawable/ic_tag"
+        android:drawablePadding="@dimen/dp_3"
+        android:textColor="@color/item_title"
+        android:textSize="@dimen/sp_16"
+        tools:text="@string/app_name"/>
+
+    <com.zhy.view.flowlayout.TagFlowLayout
+        android:id="@+id/tfl_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_10"
+        app:max_select="0"/>
+
+</LinearLayout>

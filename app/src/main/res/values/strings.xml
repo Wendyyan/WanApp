@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">玩Android demo</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="info_home">首页</string>
+    <string name="info_knowledge_system">知识体系</string>
+    <string name="info_navigation">导航</string>
+    <string name="info_project">项目</string>
+
+    <!-- Navigation Action -->
+    <string name="nav_my_collect">收藏</string>
+    <string name="nav_setting">设置</string>
+    <string name="nav_about_us">关于我们</string>
+    <string name="nav_logout">退出登录</string>
+    <string name="nav_night_mode">夜间模式</string>
+    <string name="nav_day_mode">日间模式</string>
+    <string name="nav_todo">TODO工具</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--首页-->
+    <string name="info_no_data">暂无数据</string>
+    <string name="info_new_fresh">新</string>
+    <string name="msg_collect_success">收藏成功</string>
+    <string name="msg_cancel_collect_success">已取消收藏</string>
+
+    <!--文章详情-->
+    <string name="info_is_loading">正在加载</string>
+    <string name="info_agent_web_fail">出错啦! 点击空白处刷新~</string>
+    <string name="info_share_article_url">%1$s分享【%2$s】：%3$s</string>
+
+    <!--搜索-->
+    <string name="info_search">搜索</string>
+    <string name="info_hot_search">热门搜索</string>
+    <string name="info_search_history">搜索历史</string>
+    <string name="info_clear">清空</string>
+    <string name="info_cancel">取消</string>
+    <string name="msg_input_search_content">请输入搜索内容</string>
+
+    <!-- Menu Action -->
+    <string name="action_search">搜索</string>
+    <string name="action_share">分享</string>
+    <string name="action_like">收藏</string>
+    <string name="action_browser">用浏览器打开</string>
+
+    <!--登录-->
+    <string name="info_icon">图标</string>
+    <string name="info_username">用户名</string>
+    <string name="info_password">密码</string>
+    <string name="info_login">登录</string>
+    <string name="info_login_ing">登录中...</string>
+    <string name="info_registering">注册中...</string>
+
+    <string name="msg_login_tint">请先登录</string>
+    <string name="msg_input_username">请输入用户名</string>
+    <string name="msg_input_password">请输入密码</string>
+    <string name="msg_login_success">登录成功</string>
+    <string name="msg_login_fail">登录失败</string>
+    <string name="msg_logout_success">退出登录成功</string>
+    <string name="msg_exit_tip">再按一次退出程序</string>
+
+    <string name="about_content"><![CDATA[
+        <h2>网站内容</h2>
+        <p>\t\t本网站每天新增20~30篇优质文章，并加入到现有分类中，力求整理出一份优质而又详尽的知识体系，闲暇时间不妨上来学习下知识；除此以外，并为大家提供平时开发过程中常用的工具以及常用的网址导航。</p>
+        <p>\t\t当然这只是我们目前的功能，未来我们将提供更多更加便捷的功能…</p>
+        <p>\t\t如果您有任何好的建议：</p>
+            <br/>\t\t\t\t关于网站排版
+            <br/>\t\t\t\t关于新增常用网址以及工具
+            <br/>\t\t\t\t未来你希望增加的功能等
+        <p>\t\t可以在 <a href="https://github.com/hongyangAndroid/wanandroid" target="_blank">https://github.com/hongyangAndroid/xueandroid</a> 项目中以issue的形式提出，我将及时跟进。</p>
+        <p>\t\t如果您希望长期关注本站，可以加入我们的QQ群：<b>591683946</b></p>
+        <h2>源码位置</h2>
+        <p>\t\t本软件是在学习github上的开源框架WanAndroid时边学习kotlin边按照开源代码敲出来的，开源框架地址请点击<a href="https://github.com/iceCola7/WanAndroid" target="_blank">GitHub</a>。</p>
+    ]]></string>
+
+</resources>
