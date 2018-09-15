@@ -11,12 +11,14 @@ import com.just.agentweb.AgentWeb
 import com.zyf.wanapp.R
 import com.zyf.wanapp.base.BaseActivity
 import com.zyf.wanapp.constant.Constant
+import com.zyf.wanapp.event.RefreshHomeEvent
 import com.zyf.wanapp.mvp.contract.ContentContract
 import com.zyf.wanapp.mvp.presenter.ContentPresenter
 import com.zyf.wanapp.util.DelegateExt
 import com.zyf.wanapp.util.getAgentWeb
 import kotlinx.android.synthetic.main.container.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.browse
 import org.jetbrains.anko.share
 import org.jetbrains.anko.startActivity
@@ -56,12 +58,14 @@ class ContentActivity : BaseActivity(), ContentContract.View {
     override fun showCollectSuccess(success: Boolean) {
         if (success) {
             toast(getString(R.string.msg_collect_success))
+            EventBus.getDefault().post(RefreshHomeEvent(true))
         }
     }
 
     override fun showCancelCollectSuccess(success: Boolean) {
         if (success) {
             toast(getString(R.string.msg_cancel_collect_success))
+            EventBus.getDefault().post(RefreshHomeEvent(true))
         }
     }
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/info_basic_setting">
+
+        <SwitchPreference
+            android:key="switch_no_photo_mode"
+            android:title="@string/info_switch_photo_mode"
+            android:summary="@string/info_switch_no_photo_mode_summary"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/info_other_setting">
+
+        <Preference
+            android:key="clear_cache"
+            android:title="@string/info_clear_cache"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/info_about_settings">
+
+        <Preference
+            android:key="version"
+            android:title="@string/info_version"/>
+
+        <Preference
+            android:key="source_code"
+            android:title="@string/info_source_code"
+            android:summary="@string/info_source_code_url"/>
+
+        <Preference
+            android:key="copyright"
+            android:title="@string/info_copyright"
+            android:summary="@string/info_copyright_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -18,6 +18,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.zyf.wanapp.R
 import com.zyf.wanapp.base.BaseActivity
 import com.zyf.wanapp.event.LoginEvent
+import com.zyf.wanapp.event.RefreshHomeEvent
 import com.zyf.wanapp.ui.fragment.HomeFragment
 import com.zyf.wanapp.ui.fragment.KnowledgeTreeFragment
 import com.zyf.wanapp.ui.fragment.NavigationFragment
@@ -29,6 +30,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -156,7 +158,7 @@ class MainActivity : BaseActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    @Subscribe
+    @Subscribe(threadMode = ThreadMode.MAIN)
     fun loginEvent(event: LoginEvent){
         if (event.isLogin) {
             tvUsername?.text = DelegateExt.username
@@ -165,6 +167,13 @@ class MainActivity : BaseActivity() {
         } else {
             tvUsername?.text = getString(R.string.info_login)
             navView.menu.findItem(R.id.nav_logout).isVisible = false
+            mHomeFragment?.lazyLoad()
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun refreshHomeEvent(event: RefreshHomeEvent){
+        if (event.isRefresh) {
             mHomeFragment?.lazyLoad()
         }
     }
@@ -250,6 +259,14 @@ class MainActivity : BaseActivity() {
                             startActivity<LoginActivity>()
                         }
                     }
+                    R.id.nav_todo -> {
+                        if (DelegateExt.isLogin) {
+                            startActivity<TodoActivity>()
+                        } else {
+                            toast(getString(R.string.msg_login_tint))
+                            startActivity<LoginActivity>()
+                        }
+                    }
                     R.id.nav_night_mode -> {
                         DelegateExt.run {
                             if (isNightMode) {
@@ -262,18 +279,15 @@ class MainActivity : BaseActivity() {
                         }
                         recreate()
                     }
-                    R.id.nav_about_us -> {
-                        startActivity<AboutActivity>()
-                    }
-                    R.id.nav_logout -> {
-                        Preference.clearPreference()
-                        logout()
-                    }
+                    R.id.nav_setting -> startActivity<SettingActivity>()
+                    R.id.nav_about_us -> startActivity<AboutActivity>()
+                    R.id.nav_logout -> logout()
                 }
                 true
             }
 
     private fun logout(){
+        Preference.clearPreference()
         toast(getString(R.string.msg_logout_success))
         DelegateExt.isLogin = false
         EventBus.getDefault().post(LoginEvent(false))

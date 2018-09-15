@@ -1,6 +1,5 @@
 package com.zyf.wanapp.ui.activity
 
-import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.DefaultItemAnimator
@@ -10,6 +9,7 @@ import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.CollectListAdapter
 import com.zyf.wanapp.base.BaseActivity
 import com.zyf.wanapp.constant.Constant
+import com.zyf.wanapp.event.RefreshHomeEvent
 import com.zyf.wanapp.mvp.contract.CollectContract
 import com.zyf.wanapp.mvp.model.bean.CollectionArticle
 import com.zyf.wanapp.mvp.model.bean.CollectionResponseBody
@@ -17,6 +17,7 @@ import com.zyf.wanapp.mvp.presenter.CollectPresenter
 import com.zyf.wanapp.widge.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -93,6 +94,7 @@ class CollectActivity : BaseActivity(), CollectContract.View {
     override fun removeCollectSuccess(success: Boolean) {
         if (success) {
             toast(getString(R.string.msg_cancel_collect_success))
+            EventBus.getDefault().post(RefreshHomeEvent(true))
         }
     }
 

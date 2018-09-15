@@ -10,7 +10,8 @@ import q.rorbin.verticaltablayout.widget.ITabView
 /**
  * Created by zyf on 2018/9/3.
  */
-class NavigationTabAdapter(private val context: Context?, private val data: List<NavigationBean>): TabAdapter {
+class NavigationTabAdapter(private val context: Context?, private val data: List<NavigationBean>):
+        TabAdapter {
 
     override fun getIcon(position: Int): ITabView.TabIcon? = null
 

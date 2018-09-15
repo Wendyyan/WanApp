@@ -6,6 +6,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+    <!--首页-->
     <string name="info_home">首页</string>
     <string name="info_knowledge_system">知识体系</string>
     <string name="info_navigation">导航</string>
@@ -64,6 +65,28 @@
     <string name="msg_logout_success">退出登录成功</string>
     <string name="msg_exit_tip">再按一次退出程序</string>
 
+    <!-- Setting -->
+    <string name="info_basic_setting">基本设置</string>
+    <string name="info_switch_photo_mode">无图模式</string>
+    <string name="info_switch_no_photo_mode_summary">开启后在非Wifi环境下不加载图片</string>
+    <string name="info_clear_cache">清除缓存</string>
+    <string name="info_clear_cache_successfully">清理成功</string>
+    <string name="info_other_setting">其他设置</string>
+    <string name="info_about_settings">关于</string>
+    <string name="info_choose_theme_color">主题颜色</string>
+    <string name="info_choose_theme_color_summary">自定义主题颜色</string>
+    <string name="info_back">返回</string>
+    <string name="info_done">完成</string>
+    <string name="info_custom">自定义</string>
+    <string name="info_nav_bar_coloration">导航栏着色</string>
+    <string name="info_nav_bar_coloration_summary">导航栏颜色跟随主题颜色</string>
+    <string name="info_source_code">源代码</string>
+    <string name="info_source_code_url">https://github.com/Wendyyan/WanApp</string>
+    <string name="info_copyright">版权声明</string>
+    <string name="info_copyright_summary">仅作个人及非商业用途</string>
+    <string name="info_version">版本</string>
+    <string name="info_current_version">当前版本 </string>
+
     <string name="about_content"><![CDATA[
         <h2>网站内容</h2>
         <p>\t\t本网站每天新增20~30篇优质文章，并加入到现有分类中，力求整理出一份优质而又详尽的知识体系，闲暇时间不妨上来学习下知识；除此以外，并为大家提供平时开发过程中常用的工具以及常用的网址导航。</p>
@@ -77,5 +100,81 @@
         <h2>源码位置</h2>
         <p>\t\t本软件是在学习github上的开源框架WanAndroid时边学习kotlin边按照开源代码敲出来的，开源框架地址请点击<a href="https://github.com/iceCola7/WanAndroid" target="_blank">GitHub</a>。</p>
     ]]></string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

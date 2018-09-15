@@ -20,9 +20,11 @@ object DelegateExt{
 
     var pwd: String by Preference(Constant.PASSWORD_KEY, "")
 
+    var token: String by Preference(Constant.TOKEN, "")
+
     var isNightMode: Boolean by Preference(Constant.IS_NIGHT_MODE, false)
 
-    var token: String by Preference(Constant.TOKEN, "")
+    var switchNoPhotoMode: Boolean by Preference(Constant.SWITCH_NO_PHOTO_MODE, false)
 
 }
 

@@ -17,6 +17,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.DefaultWebClient
+import com.zyf.wanapp.App
 import com.zyf.wanapp.R
 
 @SuppressLint("RestrictedApi")
@@ -45,12 +46,16 @@ fun BottomNavigationView.disableShiftMode() {
  * @param url
  */
 fun ImageView.load(context: Context?, url: String?){
+    // 1.开启无图模式 2.非WiFi环境 不加载图片
+    val isLoadImage = !DelegateExt.switchNoPhotoMode || NetWorkUtil.isWifi(App.instance)
     val options = RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.DATA)
-    Glide.with(context!!)
-            .load(url)
-            .transition(DrawableTransitionOptions().crossFade())
-            .apply(options)
-            .into(this)
+    if (isLoadImage) {
+        Glide.with(context!!)
+                .load(url)
+                .transition(DrawableTransitionOptions().crossFade())
+                .apply(options)
+                .into(this)
+    }
 }
 
 fun String.getAgentWeb(activity: Activity, webContent: ViewGroup,

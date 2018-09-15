@@ -5,8 +5,6 @@ package com.zyf.wanapp.constant
  */
 object Constant {
 
-    const val BUGLY_ID = "76e2b2867d"
-
     const val BASE_URL = "http://www.wanandroid.com/"
 
     const val LOGIN_KEY = "login"
@@ -15,6 +13,7 @@ object Constant {
     const val HAS_NETWORK_KEY = "hasNetwork"
 
     const val IS_NIGHT_MODE = "isNightMode"
+    const val SWITCH_NO_PHOTO_MODE = "switch_no_photo_mode"
     const val TOKEN = "token"
 
     const val TODO_NO = "todo_no"
@@ -39,17 +38,9 @@ object Constant {
      */
     const val CONTENT_CID_KEY = "cid"
     /**
-     * share key
-     */
-    const val CONTENT_SHARE_TYPE = "text/plain"
-    /**
      * content data key
      */
     const val CONTENT_DATA_KEY = "content_data"
-
-    const val TYPE_KEY = "type"
-
-    const val SEARCH_KEY = "search_key"
 
     const val TODO_TYPE = "todo_type"
     const val TODO_BEAN = "todo_bean"
