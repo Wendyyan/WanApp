@@ -106,7 +106,7 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        showFragment(FRAGMENT_HOME)
+        showFragment(mIndex)
         floatingActionBtn.setOnClickListener(onFabClickListener)
     }
 
