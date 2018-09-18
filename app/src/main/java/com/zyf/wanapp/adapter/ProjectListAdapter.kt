@@ -5,7 +5,6 @@ import android.os.Build
 import android.text.Html
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.zyf.wanapp.R
@@ -21,7 +20,8 @@ class ProjectListAdapter(private val context: Context?, data: MutableList<Articl
     override fun convert(helper: BaseViewHolder?, item: ArticleBean?) {
         item ?: return
         helper ?: return
-        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
+        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
         helper.setText(R.id.tv_title, charSequence)
                 .setText(R.id.tv_content, item.desc)
                 .setText(R.id.tv_author, item.author)

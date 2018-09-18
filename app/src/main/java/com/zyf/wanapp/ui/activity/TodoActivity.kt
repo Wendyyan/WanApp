@@ -1,14 +1,24 @@
 package com.zyf.wanapp.ui.activity
 
 import android.support.design.widget.TabLayout
+import android.view.Menu
+import android.view.MenuItem
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.TodoPagerAdapter
 import com.zyf.wanapp.base.BaseActivity
+import com.zyf.wanapp.constant.Constant
+import com.zyf.wanapp.event.SwitchTodoEvent
 import com.zyf.wanapp.mvp.model.bean.TodoTypeBean
 import kotlinx.android.synthetic.main.activity_todo.*
-import kotlinx.android.synthetic.main.toolbar.*
+import org.greenrobot.eventbus.EventBus
+import org.jetbrains.anko.startActivity
 
 class TodoActivity : BaseActivity() {
+
+    /**
+     * 切换todo false->待办 true->已完成
+     */
+    private var isSwitchDone: Boolean = false
 
     private val data = mutableListOf<TodoTypeBean>()
 
@@ -41,15 +51,38 @@ class TodoActivity : BaseActivity() {
                     // 默认切换的时候，会有一个过渡动画，设为false后，取消动画，直接显示
 //                    viewPager.setCurrentItem(tab?.position!!, false)
                     viewPager.currentItem = tab?.position!!
+                    EventBus.getDefault().post(SwitchTodoEvent(isSwitchDone, viewPager.currentItem))
                 }
             })
+        }
+
+        fabAdd.setOnClickListener {
+            startActivity<AddTodoActivity>(
+                    Constant.TODO_ACTION to Constant.Type.ADD_TODO,
+                    Constant.TODO_TYPE to viewPager.currentItem)
         }
     }
 
     override fun initData() {
-        data.add(TodoTypeBean(1, "只有这一个"))
-        data.add(TodoTypeBean(2, "工作"))
-        data.add(TodoTypeBean(3, "学习"))
-        data.add(TodoTypeBean(4, "生活"))
+        data.add(TodoTypeBean(0, "只用这一个"))
+        data.add(TodoTypeBean(1, "工作"))
+        data.add(TodoTypeBean(2, "学习"))
+        data.add(TodoTypeBean(3, "生活"))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_switch, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.action_switch -> {
+                isSwitchDone = !isSwitchDone
+                toolbar.title = if (isSwitchDone) "TODO(已完成)" else "TODO(未完成)"
+                EventBus.getDefault().post(SwitchTodoEvent(isSwitchDone, viewPager.currentItem))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

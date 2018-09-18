@@ -44,7 +44,7 @@ class ContentActivity : BaseActivity(), ContentContract.View {
         contentPresenter.attachView(this)
         initToolbar(toolbar, true, getString(R.string.info_is_loading))
 
-        intent.extras.let {
+        intent.extras?.let {
             shareId = it.getInt(Constant.CONTENT_ID_KEY, -1)
             shareTitle = it.getString(Constant.CONTENT_TITLE_KEY, "")
             shareUrl = it.getString(Constant.CONTENT_URL_KEY, "")

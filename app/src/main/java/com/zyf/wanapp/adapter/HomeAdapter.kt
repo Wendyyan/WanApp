@@ -21,7 +21,8 @@ class HomeAdapter(private val context: Context?, data: MutableList<ArticleBean>)
     override fun convert(helper: BaseViewHolder?, item: ArticleBean?) {
         item ?: return
         helper ?: return
-        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
+        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
         helper.setText(R.id.tv_article_title, charSequence)
                 .setText(R.id.tv_article_author, item.author)
                 .setText(R.id.tv_article_date, item.niceDate)

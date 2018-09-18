@@ -81,7 +81,7 @@ object RetrofitHelper {
             }
             addInterceptor {
                 val request = it.request()
-                val builder = request.newBuilder()
+                val newBuilder = request.newBuilder()
                 val domain = request.url().host()
                 val url = request.url().toString()
                 if (domain.isNotEmpty() && (url.contains(HttpConstant.COLLECTIONS_WEBSITE)
@@ -91,10 +91,10 @@ object RetrofitHelper {
                     val spDomain: String by Preference(domain, "")
                     val cookie: String = if (spDomain.isNotEmpty()) spDomain else ""
                     if (cookie.isNotEmpty()) {
-                        builder.addHeader(HttpConstant.COOKIE_NAME, cookie)
+                        newBuilder.addHeader(HttpConstant.COOKIE_NAME, cookie)
                     }
                 }
-                it.proceed(builder.build())
+                it.proceed(newBuilder.build())
             }
             cache(cache)  //添加缓存
             connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)

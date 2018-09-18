@@ -11,8 +11,6 @@ class SplashActivity : BaseActivity() {
 
     private var alphaAnimation: AlphaAnimation? = null
 
-    override fun useEventBus(): Boolean = false
-
     override fun attachLayoutRes(): Int = R.layout.activity_splash
 
     override fun initData() {

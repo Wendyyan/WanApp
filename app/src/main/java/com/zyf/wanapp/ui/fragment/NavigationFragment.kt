@@ -34,7 +34,7 @@ class NavigationFragment : BaseFragment(), NavigationContract.View {
     private val navigationList = mutableListOf<NavigationBean>()
 
     private val navigationAdapter: NavigationAdapter by lazy {
-        NavigationAdapter(activity, navigationList)
+        NavigationAdapter(navigationList)
     }
 
     private val linearLayoutManager by lazy {

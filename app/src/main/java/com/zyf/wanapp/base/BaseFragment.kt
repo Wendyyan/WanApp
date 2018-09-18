@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zyf.wanapp.App
-import com.zyf.wanapp.constant.Constant
 import com.zyf.wanapp.util.DelegateExt
-import com.zyf.wanapp.util.Preference
-import org.jetbrains.anko.toast
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 /**
  * Created by zyf on 2018/8/30.
@@ -25,6 +24,8 @@ abstract class BaseFragment : Fragment() {
     //数据是否加载过
     private var hasLoadData = false
 
+    open fun useEventBus(): Boolean = false
+
     abstract fun attachLayoutRes(): Int
 
     abstract fun initView()
@@ -37,6 +38,9 @@ abstract class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (useEventBus()) {
+            EventBus.getDefault().register(this)
+        }
         isViewPrepare = true
         initView()
         lazyLoadDataIfPrepared()
@@ -56,6 +60,9 @@ abstract class BaseFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        if (useEventBus()) {
+            EventBus.getDefault().unregister(this)
+        }
         activity?.let { App.getRefWatcher(it)?.watch(it) }
     }
 }

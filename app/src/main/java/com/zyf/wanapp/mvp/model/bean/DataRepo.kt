@@ -151,3 +151,36 @@ data class CollectionArticle(
 //TODO工具类型
 data class TodoTypeBean(val type: Int, val name: String)
 
+//所有TODO，包括待办和已完成
+data class AllTodoResponseBody(
+        @Json(name = "type") val type: Int,
+        @Json(name = "doneList") val doneList: MutableList<TodoListBean>,
+        @Json(name = "todoList") val todoList: MutableList<TodoListBean>)
+
+data class TodoListBean(
+        @Json(name = "date") val date: Long,
+        @Json(name = "todoList") val todoList: MutableList<TodoBean>)
+
+data class TodoResponseBody(
+        @Json(name = "curPage") val curPage: Int,
+        @Json(name = "datas") val datas: MutableList<TodoBean>,
+        @Json(name = "offset") val offset: Int,
+        @Json(name = "over") val over: Boolean,
+        @Json(name = "pageCount") val pageCount: Int,
+        @Json(name = "size") val size: Int,
+        @Json(name = "total") val total: Int)
+
+@Parcelize
+data class TodoBean(
+        @Json(name = "id") val id: Int,
+        @Json(name = "completeDateStr") val completeDateStr: String,
+        @Json(name = "content") val content: String,
+        @Json(name = "date") val date: Long,
+        @Json(name = "dateStr") val dateStr: String,
+        @Json(name = "status") val status: Int,
+        @Json(name = "title") val title: String,
+        @Json(name = "type") val type: Int,
+        @Json(name = "userId") val userId: Int) : Parcelable
+
+
+

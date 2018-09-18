@@ -16,8 +16,6 @@ import com.zyf.wanapp.mvp.contract.SearchContract
 import com.zyf.wanapp.mvp.model.bean.HotKeyBean
 import com.zyf.wanapp.mvp.model.bean.SearchHistoryBean
 import com.zyf.wanapp.mvp.presenter.SearchPresenter
-import com.zyf.wanapp.util.CommonUtil
-import com.zyf.wanapp.widge.SpaceItemDecoration
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
@@ -75,7 +73,7 @@ class SearchActivity : BaseActivity(), SearchContract.View {
             tvClear.visibility = View.INVISIBLE
         }
         
-        etSearch.setOnEditorActionListener { textView, actionId, keyEvent ->
+        etSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 if (etSearch.text.isEmpty()) {
                     toast(getString(R.string.msg_input_search_content))

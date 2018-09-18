@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/sticky_header_bg">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_6"
+        android:paddingBottom="@dimen/dp_6"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/item_date"
+        android:textSize="@dimen/item_tv_date"
+        tools:text="2017-9-10"/>
+
+</android.support.constraint.ConstraintLayout>

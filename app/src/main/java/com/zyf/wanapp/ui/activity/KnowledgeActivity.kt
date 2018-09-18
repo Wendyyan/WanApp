@@ -25,8 +25,8 @@ class KnowledgeActivity : BaseActivity() {
     override fun attachLayoutRes(): Int = R.layout.activity_knowledge
 
     override fun initData() {
-        intent.extras.getParcelable<KnowledgeTreeBody>(Constant.CONTENT_DATA_KEY).let {
-            toolbarTitle = it.name
+        intent.extras?.getParcelable<KnowledgeTreeBody>(Constant.CONTENT_DATA_KEY).let {
+            toolbarTitle = it!!.name
             knowledgeList.addAll(it.children)
         }
     }

@@ -9,7 +9,6 @@ import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.zyf.wanapp.R
-import com.zyf.wanapp.mvp.model.bean.ArticleBean
 import com.zyf.wanapp.mvp.model.bean.CollectionArticle
 import com.zyf.wanapp.util.load
 
@@ -22,7 +21,8 @@ class CollectListAdapter(private val context: Context?, data: MutableList<Collec
     override fun convert(helper: BaseViewHolder?, item: CollectionArticle?) {
         item ?: return
         helper ?: return
-        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
+        val charSequence = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            Html.fromHtml(item.title, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(item.title)
         helper.setText(R.id.tv_article_title, charSequence)
                 .setText(R.id.tv_article_author, item.author)
                 .setText(R.id.tv_article_date, item.niceDate)

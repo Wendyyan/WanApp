@@ -3,12 +3,8 @@ package com.zyf.wanapp.base
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.KeyEvent
 import android.view.MenuItem
 import com.zyf.wanapp.App
-import com.zyf.wanapp.constant.Constant
-import com.zyf.wanapp.util.DelegateExt
-import com.zyf.wanapp.util.Preference
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.jetbrains.anko.toast
@@ -18,7 +14,7 @@ import org.jetbrains.anko.toast
  */
 abstract class BaseActivity : AppCompatActivity() {
 
-    open fun useEventBus(): Boolean = true
+    open fun useEventBus(): Boolean = false
 
     protected abstract fun attachLayoutRes(): Int
 
@@ -26,7 +22,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun initView()
 
-    @Subscribe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(attachLayoutRes())

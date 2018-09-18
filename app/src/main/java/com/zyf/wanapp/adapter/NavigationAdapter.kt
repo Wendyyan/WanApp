@@ -19,7 +19,7 @@ import org.jetbrains.anko.startActivity
 /**
  * Created by zyf on 2018/9/3.
  */
-class NavigationAdapter(context: Context?, data: MutableList<NavigationBean>):
+class NavigationAdapter(data: MutableList<NavigationBean>):
         BaseQuickAdapter<NavigationBean, BaseViewHolder>(R.layout.item_navigation_list, data) {
 
     override fun convert(helper: BaseViewHolder?, item: NavigationBean?) {
@@ -38,7 +38,7 @@ class NavigationAdapter(context: Context?, data: MutableList<NavigationBean>):
                     tv.run {
                         text = article.title
                     }
-                    setOnTagClickListener { view, pos, _ ->
+                    setOnTagClickListener { _, pos, _ ->
                         val data: ArticleBean = articles[pos]
                         context.startActivity<ContentActivity>(
                                 Constant.CONTENT_URL_KEY to data.link,

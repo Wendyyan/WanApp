@@ -148,7 +148,7 @@ class KnowledgeFragment : BaseFragment(), KnowledgeContract.View {
     private val onRequestLoadMoreListener = BaseQuickAdapter.RequestLoadMoreListener {
         isRefresh = false
         swipeRefreshLayout.isRefreshing = false
-        val page = articleList.size / 20;
+        val page = articleList.size / 20
         knowledgePresenter.requestArticles(page, cid)
     }
 
@@ -168,7 +168,7 @@ class KnowledgeFragment : BaseFragment(), KnowledgeContract.View {
     /**
      * 点击item下的控件
      */
-    private val onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { adapter, view, position ->
+    private val onItemChildClickListener = BaseQuickAdapter.OnItemChildClickListener { _, view, position ->
         if (articleList.size != 0) {
             val data = articleList[position]
             when(view.id){

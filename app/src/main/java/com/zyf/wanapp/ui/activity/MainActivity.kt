@@ -53,6 +53,8 @@ class MainActivity : BaseActivity() {
 
     private var tvUsername: TextView? = null
 
+    override fun useEventBus(): Boolean = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         if (savedInstanceState != null) {
             mIndex = savedInstanceState.getInt(BOTTOM_INDEX)

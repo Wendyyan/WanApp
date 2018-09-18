@@ -28,7 +28,7 @@ class ProjectListFragment: BaseFragment(), ProjectListContract.View {
 
     companion object {
         fun getInstance(cid: Int): ProjectListFragment {
-            val fragment = ProjectListFragment();
+            val fragment = ProjectListFragment()
             val args = Bundle()
             args.putInt(Constant.CONTENT_CID_KEY, cid)
             fragment.arguments = args
