@@ -43,7 +43,8 @@
         <activity android:name=".ui.activity.TodoActivity" />
         <activity android:name=".ui.activity.CollectActivity" />
         <activity android:name=".ui.activity.SettingActivity" />
-        <activity android:name=".ui.activity.AddTodoActivity"></activity>
+        <activity android:name=".ui.activity.AddTodoActivity" />
+        <activity android:name=".ui.activity.SearchResultActivity"></activity>
     </application>
 
 </manifest>

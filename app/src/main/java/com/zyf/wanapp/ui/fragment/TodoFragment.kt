@@ -66,9 +66,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
      * RecyclerView Divider
      */
     private val recyclerViewItemDecoration by lazy {
-        activity?.let {
-            SpaceItemDecoration(it)
-        }
+        SpaceItemDecoration(activity!!)
     }
 
     private val todoPresenter by lazy {
@@ -93,7 +91,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
             layoutManager = linearLayoutManager
             adapter = todoAdapter
             itemAnimator = DefaultItemAnimator()
-            addItemDecoration(recyclerViewItemDecoration!!)
+            addItemDecoration(recyclerViewItemDecoration)
         }
 
         todoAdapter.run {

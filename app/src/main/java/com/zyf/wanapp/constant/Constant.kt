@@ -10,12 +10,13 @@ object Constant {
     const val LOGIN_KEY = "login"
     const val USERNAME_KEY = "username"
     const val PASSWORD_KEY = "password"
+    const val TOKEN = "token"
 //    const val HAS_NETWORK_KEY = "hasNetwork"
+
 
     const val IS_NIGHT_MODE = "isNightMode"
     const val SWITCH_NO_PHOTO_MODE = "switch_no_photo_mode"
-    const val TOKEN = "token"
-
+    const val SEARCH_KEY = "search_key"
 
     /**
      * content
@@ -29,8 +30,6 @@ object Constant {
     const val TODO_TYPE = "todo_type"
     const val TODO_BEAN = "todo_bean"
     const val TODO_ACTION = "todo_action"
-    const val TODO_NO = "todo_no"
-    const val TODO_DONE = "todo_done"
 
     object Type {
         const val ADD_TODO = "add_todo"

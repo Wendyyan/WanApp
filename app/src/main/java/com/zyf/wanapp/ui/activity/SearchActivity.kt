@@ -12,6 +12,7 @@ import com.zhy.view.flowlayout.TagAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.SearchHistoryAdapter
 import com.zyf.wanapp.base.BaseActivity
+import com.zyf.wanapp.constant.Constant
 import com.zyf.wanapp.mvp.contract.SearchContract
 import com.zyf.wanapp.mvp.model.bean.HotKeyBean
 import com.zyf.wanapp.mvp.model.bean.SearchHistoryBean
@@ -125,7 +126,7 @@ class SearchActivity : BaseActivity(), SearchContract.View {
         etSearch.setText(key)
         etSearch.setSelection(key.length)
         searchPresenter.saveSearchKey(key)
-        startActivity<LoginActivity>()
+        startActivity<SearchResultActivity>(Constant.SEARCH_KEY to key)
     }
 
     /**
