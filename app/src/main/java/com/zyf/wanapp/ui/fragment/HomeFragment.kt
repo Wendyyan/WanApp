@@ -20,6 +20,7 @@ import com.zyf.wanapp.mvp.model.bean.BannerBean
 import com.zyf.wanapp.mvp.presenter.HomePresenter
 import com.zyf.wanapp.ui.activity.ContentActivity
 import com.zyf.wanapp.ui.activity.LoginActivity
+import com.zyf.wanapp.util.DelegateExt
 import com.zyf.wanapp.widge.SpaceItemDecoration
 import com.zyf.wanapp.util.load
 import io.reactivex.Observable
@@ -210,7 +211,7 @@ class HomeFragment : BaseFragment(), HomeContract.View {
             val data = articleList[position]
             when(view.id){
                 R.id.iv_like ->{
-                    if (isLogin) {
+                    if (DelegateExt.isLogin) {
                         val collect = data.collect
                         data.collect = !collect
                         homeAdapter.setData(position, data)

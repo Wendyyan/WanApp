@@ -244,7 +244,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
     /**
      * 长按删除todo
      */
-    private val onItemLongClickListener = BaseQuickAdapter.OnItemLongClickListener { adapter, view, position ->
+    private val onItemLongClickListener = BaseQuickAdapter.OnItemLongClickListener { _, _, position ->
         if (todoList.size != 0){
             val data = todoList[position].t
             activity?.let {

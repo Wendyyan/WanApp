@@ -16,10 +16,31 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
+
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'com.zyf'
+            keyPassword password.toString()
+            storeFile file('zyf.jks')
+            storePassword password.toString()
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true //清理无用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    def outputFile = output.outputFile
+                    if(outputFile != null && outputFile.name.endsWith(".apk")){
+                        def filename = "WanApp-release.apk"
+                        outputFileName = filename
+                    }
+                }
+            }
         }
     }
     androidExtensions {

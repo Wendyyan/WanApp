@@ -15,9 +15,6 @@ import org.greenrobot.eventbus.Subscribe
  */
 abstract class BaseFragment : Fragment() {
 
-    //用户是否登录
-    protected var isLogin = DelegateExt.isLogin
-
     //视图是否加载完毕
     private var isViewPrepare = false
 

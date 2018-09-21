@@ -16,6 +16,7 @@ import com.zyf.wanapp.mvp.model.bean.ArticleResponseBody
 import com.zyf.wanapp.mvp.presenter.KnowledgePresenter
 import com.zyf.wanapp.ui.activity.ContentActivity
 import com.zyf.wanapp.ui.activity.LoginActivity
+import com.zyf.wanapp.util.DelegateExt
 import com.zyf.wanapp.widge.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.startActivity
@@ -173,7 +174,7 @@ class KnowledgeFragment : BaseFragment(), KnowledgeContract.View {
             val data = articleList[position]
             when(view.id){
                 R.id.iv_like -> {
-                    if (isLogin) {
+                    if (DelegateExt.isLogin) {
                         val collect = data.collect
                         data.collect = !collect
                         knowledgeAdapter.setData(position, data)
