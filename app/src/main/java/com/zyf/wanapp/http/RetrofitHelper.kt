@@ -137,7 +137,7 @@ object RetrofitHelper {
     /**
      * 设置头
      */
-    private fun addHeaderInterceptor(): Interceptor {
+    private fun addTokenInterceptor(): Interceptor {
         return Interceptor { chain ->
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()

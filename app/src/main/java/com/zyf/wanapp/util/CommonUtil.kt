@@ -12,7 +12,7 @@ import java.util.*
  */
 
 /**
- * dp转sp
+ * dp转px
  */
 fun dp2px(context: Context, dpValue: Float): Int =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue,

@@ -111,6 +111,7 @@ class HomeFragment : BaseFragment(), HomeContract.View {
         }
     }
 
+    @SuppressLint("CheckResult")
     override fun setBanners(banners: List<BannerBean>) {
         bannerList = banners as ArrayList<BannerBean>
         val bannerFeedList = ArrayList<String>()
