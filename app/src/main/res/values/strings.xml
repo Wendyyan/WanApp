@@ -55,15 +55,20 @@
     <string name="info_icon">图标</string>
     <string name="info_username">用户名</string>
     <string name="info_password">密码</string>
+    <string name="info_confirm_password">确认密码</string>
     <string name="info_login">登录</string>
-    <string name="info_login_ing">登录中...</string>
-    <string name="info_registering">注册中...</string>
+    <string name="info_login_ing">登录中&#8230;</string>
+    <string name="info_register">注册</string>
+    <string name="info_registering">注册中&#8230;</string>
 
     <string name="msg_login_tint">请先登录</string>
     <string name="msg_input_username">请输入用户名</string>
     <string name="msg_input_password">请输入密码</string>
+    <string name="msg_confirm_password">请确认密码</string>
+    <string name="msg_different_password">两次输入的密码不一致</string>
     <string name="msg_login_success">登录成功</string>
     <string name="msg_login_fail">登录失败</string>
+    <string name="msg_register_success">注册成功</string>
     <string name="msg_logout_success">退出登录成功</string>
     <string name="msg_exit_tip">再按一次退出程序</string>
 

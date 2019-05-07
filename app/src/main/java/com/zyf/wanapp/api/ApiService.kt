@@ -11,7 +11,7 @@ interface ApiService {
 
     /**
      * 登录
-     * http://www.wanandroid.com/user/login
+     * https://www.wanandroid.com/user/login
      * @param username
      * @param password
      */
@@ -21,8 +21,20 @@ interface ApiService {
               @Field("password") password: String): Observable<HttpResult<LoginBean>>
 
     /**
+     * 注册
+     * https://www.wanandroid.com/user/register
+     * @param username
+     * @param password
+     */
+    @POST("user/register")
+    @FormUrlEncoded
+    fun register(@Field("username") username: String,
+              @Field("password") password: String,
+              @Field("repassword") rePassword:String): Observable<HttpResult<LoginBean>>
+
+    /**
      * 收藏站内文章
-     * http://www.wanandroid.com/lg/collect/1165/json
+     * https://www.wanandroid.com/lg/collect/1165/json
      * @param id article id
      */
     @POST("lg/collect/{id}/json")
@@ -30,7 +42,7 @@ interface ApiService {
 
     /**
      * 文章列表中取消收藏文章
-     * http://www.wanandroid.com/lg/uncollect_originId/2333/json
+     * https://www.wanandroid.com/lg/uncollect_originId/2333/json
      * @param id
      */
     @POST("lg/uncollect_originId/{id}/json")
@@ -38,14 +50,14 @@ interface ApiService {
 
     /**
      * 获取轮播图
-     * http://www.wanandroid.com/banner/json
+     * https://www.wanandroid.com/banner/json
      */
     @GET("banner/json")
     fun getBanners(): Observable<HttpResult<List<BannerBean>>>
 
     /**
      * 获取文章列表
-     * http://www.wanandroid.com/article/list/0/json
+     * https://www.wanandroid.com/article/list/0/json
      * @param pageNum
      */
     @GET("article/list/{pageNum}/json")
@@ -53,14 +65,14 @@ interface ApiService {
 
     /**
      * 获取知识体系
-     * http://www.wanandroid.com/tree/json
+     * https://www.wanandroid.com/tree/json
      */
     @GET("tree/json")
     fun getKnowledgeTree(): Observable<HttpResult<List<KnowledgeTreeBody>>>
 
     /**
      * 知识体系下的文章
-     * http://www.wanandroid.com/article/list/0/json?cid=168
+     * https://www.wanandroid.com/article/list/0/json?cid=168
      * @param page
      * @param cid
      */
@@ -70,21 +82,21 @@ interface ApiService {
 
     /**
      * 导航数据
-     * http://www.wanandroid.com/navi/json
+     * https://www.wanandroid.com/navi/json
      */
     @GET("navi/json")
     fun getNavigationList(): Observable<HttpResult<List<NavigationBean>>>
 
     /**
      * 项目数据
-     * http://www.wanandroid.com/project/tree/json
+     * https://www.wanandroid.com/project/tree/json
      */
     @GET("project/tree/json")
     fun getProjectTree(): Observable<HttpResult<List<ProjectTreeBean>>>
 
     /**
      * 项目列表
-     * http://www.wanandroid.com/project/list/1/json?cid=294
+     * https://www.wanandroid.com/project/list/1/json?cid=294
      * @param page
      * @param cid
      */
@@ -94,7 +106,7 @@ interface ApiService {
 
     /**
      *  获取收藏列表
-     *  http://www.wanandroid.com/lg/collect/list/0/json
+     *  https://www.wanandroid.com/lg/collect/list/0/json
      *  @param page
      */
     @GET("lg/collect/list/{page}/json")
@@ -103,7 +115,7 @@ interface ApiService {
 
     /**
      * 收藏列表中取消收藏文章
-     * http://www.wanandroid.com/lg/uncollect/2805/json
+     * https://www.wanandroid.com/lg/uncollect/2805/json
      * @param id
      * @param originId
      */
@@ -114,14 +126,14 @@ interface ApiService {
 
     /**
      * 搜索热词
-     * http://www.wanandroid.com/hotkey/json
+     * https://www.wanandroid.com/hotkey/json
      */
     @GET("hotkey/json")
     fun getHotKey(): Observable<HttpResult<List<HotKeyBean>>>
 
     /**
      * 搜索
-     * http://www.wanandroid.com/article/query/0/json
+     * https://www.wanandroid.com/article/query/0/json
      * @param page
      * @param key
      */
@@ -132,7 +144,7 @@ interface ApiService {
 
     /**
      * 获取TODO列表数据
-     * http://wanandroid.com/lg/todo/list/0/json
+     * https://wanandroid.com/lg/todo/list/0/json
      * @param type
      */
     @POST("/lg/todo/list/{type}/json")
@@ -140,7 +152,7 @@ interface ApiService {
 
     /**
      * 获取未完成Todo列表
-     * http://wanandroid.com/lg/todo/listnotdo/0/json/1
+     * https://wanandroid.com/lg/todo/listnotdo/0/json/1
      * @param type 类型拼接在链接上，目前支持0,1,2,3
      * @param page 拼接在链接上，从1开始
      */
@@ -150,7 +162,7 @@ interface ApiService {
 
     /**
      * 获取已完成Todo列表
-     * http://www.wanandroid.com/lg/todo/listdone/0/json/1
+     * https://www.wanandroid.com/lg/todo/listdone/0/json/1
      * @param type 类型拼接在链接上，目前支持0,1,2,3
      * @param page 拼接在链接上，从1开始
      */
@@ -160,7 +172,7 @@ interface ApiService {
 
     /**
      * 仅更新完成状态Todo
-     * http://www.wanandroid.com/lg/todo/done/80/json
+     * https://www.wanandroid.com/lg/todo/done/80/json
      * @param id 拼接在链接上，为唯一标识
      * @param status 0或1，传1代表未完成到已完成，反之则反之
      */
@@ -171,7 +183,7 @@ interface ApiService {
 
     /**
      * 删除一条Todo
-     * http://www.wanandroid.com/lg/todo/delete/83/json
+     * https://www.wanandroid.com/lg/todo/delete/83/json
      * @param id
      */
     @POST("/lg/todo/delete/{id}/json")
@@ -179,7 +191,7 @@ interface ApiService {
 
     /**
      * 新增一条Todo
-     * http://www.wanandroid.com/lg/todo/add/json
+     * https://www.wanandroid.com/lg/todo/add/json
      * @param body
      *          title: 新增标题
      *          content: 新增详情
@@ -192,7 +204,7 @@ interface ApiService {
 
     /**
      * 更新一条Todo内容
-     * http://www.wanandroid.com/lg/todo/update/83/json
+     * https://www.wanandroid.com/lg/todo/update/83/json
      * @param body
      *          title: 新增标题
      *          content: 新增详情

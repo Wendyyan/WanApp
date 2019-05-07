@@ -38,6 +38,7 @@
     <color name="arrow_color">@color/Grey700</color>
     <color name="sticky_header_bg">@color/Grey300</color>
 
+    <color name="transparent_20_white">#33ffffff</color>
     <color name="transparent_50_white">#7fffffff</color>
     <color name="White">#FFFFFF</color>
     <color name="Black">#000000</color>
@@ -63,6 +64,7 @@
     <color name="Brown">#795548</color>
     <color name="Grey">#9e9e9e</color>
     <color name="Blue_Grey">#607d8b</color>
+    <color name="Blue_Grey_dark">#303d4d</color>
 
     <color name="Grey50">#FAFAFA</color>
     <color name="Grey100">#F5F5F5</color>

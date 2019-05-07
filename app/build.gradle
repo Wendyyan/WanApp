@@ -35,7 +35,7 @@ android {
             applicationVariants.all { variant ->
                 variant.outputs.all { output ->
                     def outputFile = output.outputFile
-                    if(outputFile != null && outputFile.name.endsWith(".apk")){
+                    if (outputFile != null && outputFile.name.endsWith(".apk")) {
                         def filename = "wanApp_V" + variant.versionName + "#" +
                                 variant.versionCode + "_" + variant.buildType.name + ".apk"
                         outputFileName = filename
