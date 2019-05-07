@@ -5,6 +5,7 @@ import android.os.PersistableBundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.NavigationView
 import android.support.v4.app.FragmentTransaction
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatDelegate
 import android.view.KeyEvent
@@ -90,10 +91,16 @@ class MainActivity : BaseActivity() {
             Glide.with(this).load(img).apply(RequestOptions.circleCropTransform()).into(ivHeadImg)
 
             menu.findItem(R.id.nav_logout).isVisible = DelegateExt.isLogin
-            menu.findItem(R.id.nav_night_mode).title = if (DelegateExt.isNightMode){
-                getString(R.string.nav_day_mode)
+            if (DelegateExt.isNightMode) {
+                menu.findItem(R.id.nav_night_mode).apply {
+                    title = getString(R.string.nav_day_mode)
+                    icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_sunny_white_24dp)
+                }
             } else {
-                getString(R.string.nav_night_mode)
+                menu.findItem(R.id.nav_night_mode).apply {
+                    title = getString(R.string.nav_night_mode)
+                    icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_night_white_24dp)
+                }
             }
 
             setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)

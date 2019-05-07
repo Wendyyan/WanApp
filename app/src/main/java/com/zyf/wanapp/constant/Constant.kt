@@ -5,7 +5,7 @@ package com.zyf.wanapp.constant
  */
 object Constant {
 
-    const val BASE_URL = "http://www.wanandroid.com/"
+    const val BASE_URL = "https://www.wanandroid.com/"
 
     const val LOGIN_KEY = "login"
     const val USERNAME_KEY = "username"

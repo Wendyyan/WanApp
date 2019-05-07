@@ -1,6 +1,6 @@
 # WanApp
 
-本代码时学习github上的开源框架WanAndroid时边学习kotlin边按照开源代码敲出来的<br>
+本项目是学习github上的开源框架WanAndroid时，边学习kotlin边按照WanAndroid的开源代码敲出来的。
 
 WanAndroid开源框架地址请点击[GitHub](https://github.com/iceCola7/WanAndroid)
 
@@ -17,7 +17,14 @@ WanAndroid开源框架地址请点击[GitHub](https://github.com/iceCola7/WanAnd
 
 ### 页面展示
 
-![首页](screenshot/首页.png)   ![知识体系](screenshot/2-1知识体系.png)
-![导航](screenshot/3-1导航.png)   ![项目](screenshot/4-1项目.png) 
-![文章详情](screenshot/1-2文章详情.png)   ![搜索](screenshot/1-3搜索.png) 
-![侧滑页](screenshot/侧滑页.png)   ![夜间模式](screenshot/夜间模式.png)
+#### 主模块相关页面
+
+<img src="./screenshot/首页.png" width="240px"/>&nbsp;<img src="./screenshot/2-1知识体系.png" width="240px"/>&nbsp;<img src="./screenshot/3-1导航.png" width="240px"/>
+
+<img src="./screenshot/4-1项目.png" width="240px"/>&nbsp;<img src="./screenshot/1-2文章详情.png" width="240px"/>&nbsp;<img src="./screenshot/1-3搜索.png" width="240px"/>
+
+#### 日间模式和夜间模式切换
+
+<img src="./screenshot/侧滑页.png" width="240px"/>&nbsp;<img src="./screenshot/夜间模式.png" width="240px"/>
+
+
