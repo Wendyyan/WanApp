@@ -1,9 +1,9 @@
 package com.zyf.wanapp.ui.fragment
 
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.KnowledgeTreeAdapter
@@ -36,8 +36,8 @@ class KnowledgeTreeFragment : BaseFragment(), KnowledgeTreeContract.View{
         KnowledgeTreeAdapter(activity, knowledgeTreeList)
     }
 
-    private val linearLayoutManager: LinearLayoutManager by lazy {
-        LinearLayoutManager(activity)
+    private val linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager by lazy {
+        androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     override fun attachLayoutRes(): Int = R.layout.fragment_home
@@ -53,7 +53,7 @@ class KnowledgeTreeFragment : BaseFragment(), KnowledgeTreeContract.View{
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = knowledgeTreeAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
         }
 
         knowledgeTreeAdapter.run {
@@ -97,7 +97,7 @@ class KnowledgeTreeFragment : BaseFragment(), KnowledgeTreeContract.View{
         activity?.toast(errorMsg)
     }
 
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         knowledgeTreePresenter.requestKnowledgeTree()
     }
 

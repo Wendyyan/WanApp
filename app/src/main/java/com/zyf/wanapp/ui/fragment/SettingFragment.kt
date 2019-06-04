@@ -2,7 +2,8 @@ package com.zyf.wanapp.ui.fragment
 
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v7.preference.PreferenceFragmentCompat
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 import com.zyf.wanapp.BuildConfig
 import com.zyf.wanapp.R
 import com.zyf.wanapp.ui.activity.SettingActivity
@@ -27,8 +28,8 @@ class SettingFragment : PreferenceFragmentCompat() {
         context = activity as SettingActivity
         setDefaultText()
 
-        findPreference("clear_cache").onPreferenceClickListener =
-                android.support.v7.preference.Preference.OnPreferenceClickListener {
+        findPreference<Preference>("clear_cache")!!.onPreferenceClickListener =
+                androidx.preference.Preference.OnPreferenceClickListener {
                     CacheDataUtil.clearAllCache(context!!)
                     context!!.toast(getString(R.string.info_clear_cache_successfully))
                     setDefaultText()
@@ -37,13 +38,13 @@ class SettingFragment : PreferenceFragmentCompat() {
 
         try {
             val version = getString(R.string.info_current_version) + BuildConfig.VERSION_NAME
-            findPreference("version").summary = version
+            findPreference<Preference>("version")!!.summary = version
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
         }
 
-        findPreference("source_code").onPreferenceClickListener =
-                android.support.v7.preference.Preference.OnPreferenceClickListener {
+        findPreference<Preference>("source_code")!!.onPreferenceClickListener =
+                androidx.preference.Preference.OnPreferenceClickListener {
                     context?.browse(getString(R.string.info_source_code_url))
                     false
                 }
@@ -51,7 +52,7 @@ class SettingFragment : PreferenceFragmentCompat() {
 
     private fun setDefaultText() {
         try {
-            findPreference("clear_cache").summary = CacheDataUtil.getTotalCacheSize(context!!)
+            findPreference<Preference>("clear_cache")!!.summary = CacheDataUtil.getTotalCacheSize(context!!)
         } catch (e: Exception) {
             e.printStackTrace()
         }

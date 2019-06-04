@@ -1,7 +1,7 @@
 package com.zyf.wanapp.ui.activity
 
 import android.app.Activity
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.view.View
 import com.zyf.wanapp.R
 import com.zyf.wanapp.base.BaseActivity

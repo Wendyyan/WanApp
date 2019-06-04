@@ -1,6 +1,6 @@
 package com.zyf.wanapp.ui.activity
 
-import android.support.design.widget.TabLayout
+import com.google.android.material.tabs.TabLayout
 import android.view.Menu
 import android.view.MenuItem
 import com.zyf.wanapp.R

@@ -1,10 +1,10 @@
 package com.zyf.wanapp.ui.fragment
 
 import android.annotation.SuppressLint
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.widget.ImageView
 import cn.bingoogolapple.bgabanner.BGABanner
@@ -56,8 +56,8 @@ class HomeFragment : BaseFragment(), HomeContract.View {
             itemView.load(activity, model) }
     }
 
-    private val linearLayoutManager: LinearLayoutManager by lazy {
-        LinearLayoutManager(activity)
+    private val linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager by lazy {
+        androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     private val recyclerViewItemDecoration by lazy {
@@ -79,7 +79,7 @@ class HomeFragment : BaseFragment(), HomeContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = homeAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             addItemDecoration(recyclerViewItemDecoration)
         }
 
@@ -174,7 +174,7 @@ class HomeFragment : BaseFragment(), HomeContract.View {
     /**
      * 刷新数据
      */
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         isRefresh = true
         homeAdapter.setEnableLoadMore(false)
         homePresenter.requestBanner()

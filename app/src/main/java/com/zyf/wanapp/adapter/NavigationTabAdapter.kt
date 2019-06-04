@@ -1,7 +1,7 @@
 package com.zyf.wanapp.adapter
 
 import android.content.Context
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import com.zyf.wanapp.R
 import com.zyf.wanapp.mvp.model.bean.NavigationBean
 import q.rorbin.verticaltablayout.adapter.TabAdapter

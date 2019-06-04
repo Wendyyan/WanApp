@@ -1,9 +1,9 @@
 package com.zyf.wanapp.ui.activity
 
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.KnowledgeAdapter
@@ -33,7 +33,7 @@ class SearchResultActivity : BaseActivity(), SearchResultContract.View {
     }
 
     private val linearLayoutManager by lazy {
-        LinearLayoutManager(this)
+        androidx.recyclerview.widget.LinearLayoutManager(this)
     }
 
     private val spaceItemDecoration by lazy {
@@ -64,7 +64,7 @@ class SearchResultActivity : BaseActivity(), SearchResultContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = searchAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             addItemDecoration(spaceItemDecoration)
         }
 
@@ -123,7 +123,7 @@ class SearchResultActivity : BaseActivity(), SearchResultContract.View {
     /**
      * 刷新数据
      */
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         isRefresh = true
         searchAdapter.setEnableLoadMore(false)
         searchResultPresenter.requestSearchResult(0, key)

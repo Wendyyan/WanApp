@@ -1,8 +1,8 @@
 package com.zyf.wanapp.ui.fragment
 
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.NavigationAdapter
 import com.zyf.wanapp.adapter.NavigationTabAdapter
@@ -38,7 +38,7 @@ class NavigationFragment : BaseFragment(), NavigationContract.View {
     }
 
     private val linearLayoutManager by lazy {
-        LinearLayoutManager(activity)
+        androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     override fun attachLayoutRes(): Int = R.layout.fragment_navigation
@@ -49,19 +49,19 @@ class NavigationFragment : BaseFragment(), NavigationContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = navigationAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             setHasFixedSize(true)
 
             //scroll recyclerView link to tab
-            addOnScrollListener(object: RecyclerView.OnScrollListener(){
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            addOnScrollListener(object: androidx.recyclerview.widget.RecyclerView.OnScrollListener(){
+                override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
                     if (isScrollTop) scrollRecyclerView()
                 }
 
-                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                override fun onScrollStateChanged(recyclerView: androidx.recyclerview.widget.RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
-                    if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    if (newState == androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE) {
                         if (isScrollTop) scrollRecyclerView()
                         if (isClickTab){
                             isClickTab = false

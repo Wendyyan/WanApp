@@ -3,12 +3,12 @@ package com.zyf.wanapp.ui.activity
 import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.NavigationView
-import android.support.v4.app.FragmentTransaction
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatDelegate
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
+import androidx.fragment.app.FragmentTransaction
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatDelegate
 import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
@@ -234,7 +234,7 @@ class MainActivity : BaseActivity() {
         transaction.commit()
     }
 
-    private fun hideFragment(transaction: FragmentTransaction){
+    private fun hideFragment(transaction: androidx.fragment.app.FragmentTransaction){
         mHomeFragment?.let { transaction.hide(it) }
         mKnowledgeFragment?.let { transaction.hide(it) }
         mNavigationFragment?.let { transaction.hide(it) }

@@ -1,6 +1,6 @@
 package com.zyf.wanapp.ui.fragment
 
-import android.support.design.widget.TabLayout
+import com.google.android.material.tabs.TabLayout
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.ProjectPagerAdapter
 import com.zyf.wanapp.base.BaseFragment

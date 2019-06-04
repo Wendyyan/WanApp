@@ -1,7 +1,7 @@
 package com.zyf.wanapp.base
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import org.greenrobot.eventbus.Subscribe
 /**
  * Created by zyf on 2018/8/30.
  */
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : androidx.fragment.app.Fragment() {
 
     //视图是否加载完毕
     private var isViewPrepare = false

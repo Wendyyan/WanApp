@@ -3,9 +3,6 @@ package com.zyf.wanapp.util
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import android.support.design.internal.BottomNavigationItemView
-import android.support.design.internal.BottomNavigationMenuView
-import android.support.design.widget.BottomNavigationView
 import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
@@ -15,12 +12,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.DefaultWebClient
 import com.zyf.wanapp.App
 import com.zyf.wanapp.R
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("RestrictedApi", "WrongConstant")
 fun BottomNavigationView.disableShiftMode() {
 
     val menuView = getChildAt(0) as BottomNavigationMenuView

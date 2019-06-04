@@ -1,10 +1,10 @@
 package com.zyf.wanapp.ui.fragment
 
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.ProjectListAdapter
@@ -49,8 +49,8 @@ class ProjectListFragment: BaseFragment(), ProjectListContract.View {
         ProjectListAdapter(activity, articleList)
     }
 
-    private val linearLayoutManager: LinearLayoutManager by lazy {
-        LinearLayoutManager(activity)
+    private val linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager by lazy {
+        androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     private val recyclerViewItemDecoration by lazy {
@@ -73,7 +73,7 @@ class ProjectListFragment: BaseFragment(), ProjectListContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = projectListAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             addItemDecoration(recyclerViewItemDecoration)
         }
 
@@ -146,7 +146,7 @@ class ProjectListFragment: BaseFragment(), ProjectListContract.View {
     /**
      * 刷新数据
      */
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         isRefresh = true
         projectListAdapter.setEnableLoadMore(false)
         projectListPresenter.requestProjectList(1, cid)

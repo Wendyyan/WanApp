@@ -1,9 +1,9 @@
 package com.zyf.wanapp.ui.activity
 
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.CollectListAdapter
@@ -36,7 +36,7 @@ class CollectActivity : BaseActivity(), CollectContract.View {
     }
 
     private val linearLayoutManager by lazy {
-        LinearLayoutManager(this)
+        androidx.recyclerview.widget.LinearLayoutManager(this)
     }
 
     private val recyclerViewItemDecoration by lazy {
@@ -61,7 +61,7 @@ class CollectActivity : BaseActivity(), CollectContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = collectAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             addItemDecoration(recyclerViewItemDecoration)
         }
 
@@ -119,7 +119,7 @@ class CollectActivity : BaseActivity(), CollectContract.View {
     /**
      * 刷新数据
      */
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         isRefresh = true
         collectAdapter.setEnableLoadMore(false)
         collectPresenter.requestCollectList(0)

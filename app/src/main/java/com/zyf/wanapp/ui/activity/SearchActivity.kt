@@ -1,7 +1,7 @@
 package com.zyf.wanapp.ui.activity
 
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -31,8 +31,8 @@ class SearchActivity : BaseActivity(), SearchContract.View {
         SearchHistoryAdapter(this, historyList)
     }
 
-    private val linearLayoutManager: LinearLayoutManager by lazy {
-        LinearLayoutManager(this)
+    private val linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager by lazy {
+        androidx.recyclerview.widget.LinearLayoutManager(this)
     }
 
     private val searchPresenter: SearchPresenter by lazy {
@@ -57,7 +57,7 @@ class SearchActivity : BaseActivity(), SearchContract.View {
         rvHistory.run {
             layoutManager = linearLayoutManager
             adapter = searchHistoryAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
         }
 
         searchHistoryAdapter.run {

@@ -2,10 +2,10 @@ package com.zyf.wanapp.ui.fragment
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.zyf.wanapp.R
 import com.zyf.wanapp.adapter.TodoAdapter
@@ -58,8 +58,8 @@ class TodoFragment : BaseFragment(), TodoContract.View {
         TodoAdapter(todoList)
     }
 
-    private val linearLayoutManager: LinearLayoutManager by lazy {
-        LinearLayoutManager(activity)
+    private val linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager by lazy {
+        androidx.recyclerview.widget.LinearLayoutManager(activity)
     }
 
     /**
@@ -90,7 +90,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
         recyclerView.run {
             layoutManager = linearLayoutManager
             adapter = todoAdapter
-            itemAnimator = DefaultItemAnimator()
+            itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
             addItemDecoration(recyclerViewItemDecoration)
         }
 
@@ -206,7 +206,7 @@ class TodoFragment : BaseFragment(), TodoContract.View {
     /**
      * 刷新数据
      */
-    private val onRefreshListener = SwipeRefreshLayout.OnRefreshListener {
+    private val onRefreshListener = androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener {
         isRefresh = true
         todoAdapter.setEnableLoadMore(false)
         lazyLoad()

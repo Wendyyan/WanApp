@@ -13,7 +13,7 @@
         android:layout_weight="2"
         android:src="@mipmap/ic_launcher"/>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="5"
@@ -74,6 +74,6 @@
             app:layout_constraintRight_toLeftOf="@id/tv_time"
             app:layout_constraintBottom_toBottomOf="@id/tv_time"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

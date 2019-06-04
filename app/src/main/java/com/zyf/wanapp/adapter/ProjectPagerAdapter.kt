@@ -1,19 +1,17 @@
 package com.zyf.wanapp.adapter
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.PagerAdapter
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.zyf.wanapp.mvp.model.bean.ProjectTreeBean
 import com.zyf.wanapp.ui.fragment.ProjectListFragment
 
 /**
  * Created by zyf on 2018/9/4.
  */
-class ProjectPagerAdapter(val list: MutableList<ProjectTreeBean>, fm: FragmentManager?) :
-        FragmentStatePagerAdapter(fm) {
+class ProjectPagerAdapter(val list: MutableList<ProjectTreeBean>, fm: FragmentManager) :
+        FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    private val fragmentList = mutableListOf<Fragment>()
+    private val fragmentList = mutableListOf<androidx.fragment.app.Fragment>()
 
     init {
         fragmentList.clear()
@@ -22,11 +20,11 @@ class ProjectPagerAdapter(val list: MutableList<ProjectTreeBean>, fm: FragmentMa
         }
     }
 
-    override fun getItem(pos: Int): Fragment = fragmentList[pos]
+    override fun getItem(pos: Int): androidx.fragment.app.Fragment = fragmentList[pos]
 
     override fun getCount(): Int = list.size
 
     override fun getPageTitle(position: Int): CharSequence? = list[position].name
 
-    override fun getItemPosition(`object`: Any): Int = PagerAdapter.POSITION_NONE
+    override fun getItemPosition(`object`: Any): Int = androidx.viewpager.widget.PagerAdapter.POSITION_NONE
 }
