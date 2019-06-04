@@ -14,6 +14,7 @@
         android:id="@+id/iv_head_img"
         android:layout_width="@dimen/avatar_width"
         android:layout_height="@dimen/avatar_height"
+        android:src="@color/white"
         android:scaleType="centerCrop"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

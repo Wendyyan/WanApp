@@ -1,5 +1,6 @@
 package com.zyf.wanapp.ui.activity
 
+import android.net.Uri
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.design.widget.BottomNavigationView
@@ -27,6 +28,7 @@ import com.zyf.wanapp.ui.fragment.ProjectFragment
 import com.zyf.wanapp.util.DelegateExt
 import com.zyf.wanapp.util.Preference
 import com.zyf.wanapp.util.disableShiftMode
+import com.zyf.wanapp.util.load
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.greenrobot.eventbus.EventBus
